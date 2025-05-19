@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+    <link rel="shortcut icon" href="./fotitos/dsadada.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculador</title>
@@ -31,81 +33,6 @@
         </tbody>
     </table>
     <p id="promedioCurso">Promedio general del curso: 0</p>
+    <script src="scripts.js"></script>
 </body>
-<script>
-    let totalGrades = 0; 
-    let studentCount = 0; 
-
-    document.getElementById("StudentForm").addEventListener("submit", function (event) {
-        event.preventDefault(); 
-
-        const name = document.getElementById("name").value;
-        const lastName = document.getElementById("lastName").value;
-        const grade = parseFloat(document.getElementById("grade").value);
-
-        const table = document.getElementById("StudentTable").querySelector("tbody");
-        const newRow = document.createElement("tr");
-
-        const nameCell = document.createElement("td");
-        nameCell.textContent = name;
-
-        const lastNameCell = document.createElement("td");
-        lastNameCell.textContent = lastName;
-
-        const gradeCell = document.createElement("td");
-        gradeCell.textContent = grade;
-
-       
-        newRow.appendChild(nameCell);
-        newRow.appendChild(lastNameCell);
-        newRow.appendChild(gradeCell);
-
-        
-        table.appendChild(newRow);
-
-        
-        totalGrades += grade; 
-        studentCount++; 
-        const average = (totalGrades / studentCount).toFixed(2); 
-        document.getElementById("promedioCurso").textContent = `Promedio general del curso: ${average}`;
-
-        
-        document.getElementById("StudentForm").reset();
-    });
-</script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Tagesschrift&display=swap');
-
-body {
-    font-family: "Mystery Quest";
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    background-color: rgb(107, 10, 10);
-    background-image: url(https://wallpapercave.com/wp/wp7383091.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-form {
-    background: linear-gradient(to bottom, rgb(0, 255, 234), rgba(255, 0, 0, 0.87));
-    border-radius: 8px;
-    height: 20vh;
-    width: 100vh;
-    text-align: center;
-}
-
-table {
-    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.87), rgba(255, 255, 255, 0.932));
-    border-radius: 8px;
-    width: 100vh;
-    margin: 10px 0px;
-}
-
-.studentForm {
-    border: 2px solid black;
-}
-</style>
 </html>
